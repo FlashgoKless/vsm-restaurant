@@ -1,6 +1,9 @@
-def main():
-    print("Hello from vsm-restaurant!")
+import logging
 
+import uvicorn
 
-if __name__ == "__main__":
-    main()
+from vsm_restaurant.web import app
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(threadName)s [%(name)s] %(levelname)-8s %(message)s")
+    uvicorn.run(app, host="0.0.0.0")
