@@ -111,7 +111,7 @@
 #### Генерация новых миграций
 alembic revision --autogenerate -m "Add demo model"
 
-Hint: Не забудьте добавить импорт новых моделей в vsm_restaurant/db/__init__.py
+Hint: Не забудьте добавить импорт новых моделей в `vsm_restaurant/db/__init__.py`
 
 Пример запуска:
 ```
