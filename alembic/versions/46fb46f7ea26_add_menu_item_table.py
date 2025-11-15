@@ -1,8 +1,8 @@
-"""Add demo model
+"""Add menu_item table
 
-Revision ID: 61d371fd62af
+Revision ID: 46fb46f7ea26
 Revises: 
-Create Date: 2025-09-13 09:15:03.740220
+Create Date: 2025-11-15 17:57:52.811672
 
 """
 from typing import Sequence, Union
@@ -10,10 +10,10 @@ from typing import Sequence, Union
 from alembic import op
 import sqlalchemy as sa
 import sqlmodel
-
+from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision: str = '61d371fd62af'
+revision: str = '46fb46f7ea26'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -28,6 +28,7 @@ def upgrade() -> None:
     sa.Column('title', sa.VARCHAR(length=255), nullable=True),
     sa.Column('message', sa.TEXT(), nullable=True),
     sa.Column('demo_enum', sa.INTEGER(), nullable=True),
+    sa.Column('json_data', postgresql.JSONB(astext_type=sa.Text()), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index('demo_timestamp_idx', 'demo', ['timestamp'], unique=False)
