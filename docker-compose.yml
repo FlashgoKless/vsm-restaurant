@@ -9,7 +9,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=5FCCBA11-B16E-4C47-BFDF-06051C17226D # random password
+      - POSTGRES_PASSWORD=test # random password
       - POSTGRES_USER=postgres
       - POSTGRES_DB=vsm_restaurant
   dummy:
